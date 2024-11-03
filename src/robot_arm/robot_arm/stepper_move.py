@@ -1,12 +1,11 @@
 import RPi.GPIO as GPIO
 import time
-#thanks chatgpt
+
 # GPIO setup
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(20, GPIO.OUT)
-GPIO.setup(22, GPIO.OUT)
+GPIO.setup(20, GPIO.OUT)  # direction pin
+GPIO.setup(22, GPIO.OUT)  # pulse pin
 
-# Function to move the motor
 def move_motor(direction, steps):
     GPIO.output(20, direction)
     for _ in range(steps):
@@ -15,11 +14,13 @@ def move_motor(direction, steps):
         GPIO.output(22, GPIO.LOW)
         time.sleep(0.001)
 
-# Example usage
-move_motor(GPIO.HIGH, 100)  # Move forward
-time.sleep(1)
-move_motor(GPIO.LOW, 100)   # Move backward
-time.sleep(1)
+def main():
+    # Example usage
+    move_motor(GPIO.HIGH, 100)  # Move forward
+    time.sleep(1)
+    move_motor(GPIO.LOW, 100)   # Move backward
+    time.sleep(1)
+    GPIO.cleanup()
 
-# Cleanup
-GPIO.cleanup()
+if __name__ == '__main__':
+    main()
