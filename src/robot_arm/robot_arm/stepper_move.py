@@ -3,15 +3,15 @@ import time
 
 # GPIO setup
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(18, GPIO.OUT)  # direction pin
-GPIO.setup(16, GPIO.OUT)  # pulse pin
+GPIO.setup(24, GPIO.OUT)  # direction pin
+GPIO.setup(23, GPIO.OUT)  # pulse pin
 
 def move_motor(direction, steps):
-    GPIO.output(18, direction)
+    GPIO.output(24, direction)
     for _ in range(steps):
-        GPIO.output(16, GPIO.HIGH)
+        GPIO.output(23, GPIO.HIGH)
         time.sleep(0.001)
-        GPIO.output(16, GPIO.LOW)
+        GPIO.output(23, GPIO.LOW)
         time.sleep(0.001)
 
 def main():
