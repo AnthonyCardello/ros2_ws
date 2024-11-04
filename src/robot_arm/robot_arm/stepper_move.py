@@ -10,9 +10,9 @@ def move_motor(direction, steps):
     GPIO.output(21, direction)
     for _ in range(steps):
         GPIO.output(20, GPIO.HIGH)
-        time.sleep(0.0005)
+        #time.sleep(0.0005)
         GPIO.output(20, GPIO.LOW)
-        time.sleep(0.0005)
+        #time.sleep(0.0005)
 
 def main():
     # Example usage
