@@ -18,9 +18,9 @@ def move_motor(direction, steps):
 
 def main():
     print("Starting main function")
-    move_motor(GPIO.HIGH, 100)  # Move forward
+    move_motor(GPIO.HIGH, 1000)  # Move forward
     time.sleep(1)
-    move_motor(GPIO.LOW, 100)   # Move backward
+    move_motor(GPIO.LOW, 1000)   # Move backward
     time.sleep(1)
     GPIO.cleanup()
     print("Main function complete")
