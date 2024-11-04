@@ -1,0 +1,3 @@
+[console_scripts]
+stepper_move = robot_arm.stepper_move:main
+
